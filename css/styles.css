@@ -109,6 +109,7 @@ font-size: 14px;
 line-height: 1.14;
 letter-spacing: 0.02em;
 color: var(--secondary-text-color);
+transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link:focus,
@@ -117,7 +118,20 @@ color: var(--accent-color);
 }
 
 .header-list .current {
+position: relative;
 color: var(--accent-color);
+}
+
+.current::after {
+content: "";
+position: absolute;
+bottom: 0;
+left: 0;
+display: block;
+width: 100%;
+height: 4px;
+border-radius: 2px;
+background-color: var(--accent-color);
 }
 
 .header-mail, .header-tel {
@@ -146,11 +160,14 @@ margin-right: 10px;
 fill: currentColor;
 }
 
+.contacts-item {
+transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .contacts-item .link:hover,
 .contacts-item .link:focus {
 color: var(--accent-color);
 }
-
 
 /* --------------------H E R O-------------------------------    */
 
@@ -183,6 +200,7 @@ min-width: 200px;
 height: 50px;
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 border-radius: 4px;
+border: none;
 font-family: inherit;
 font-style: normal;
 font-weight: 700;
@@ -195,6 +213,9 @@ color: var(--white-color);
 background-color: var(--accent-color);
 cursor: pointer;
 margin: 0 auto;
+
+transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-btn:hover {
@@ -327,7 +348,6 @@ bottom: 0;
 left: 50%;
 z-index: 2;
 
-
 font-weight: 700;
 font-size: 14px;
 line-height: 1.14;
@@ -425,10 +445,13 @@ display: flex;
 justify-content: center;
 align-items: center;
 background-color: var(--white-color);
+
+transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .soc-icon {
 fill: #AFB1B8;
+transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .soc-item + .soc-item {
@@ -475,11 +498,7 @@ border-radius: 4px;
 display: flex;
 justify-content: center;
 align-items: center;
-}
-
-.clients-link .clients-icon:hover,
-.clients-link .clients-icon:focus {
-fill: var(--accent-color);
+transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-link:hover,
@@ -491,6 +510,12 @@ border: 1px solid #2196F3;
 fill: #AFB1B8;
 width: 106px;
 height: 60px;
+transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.clients-link .clients-icon:hover,
+.clients-link .clients-icon:focus {
+fill: var(--accent-color);
 }
 
 /* -------------------F O O T E R--------------------*/
@@ -562,6 +587,7 @@ margin-bottom: 9px;
 
 .contacts .link {
 display: block;
+transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contacts .link:hover, 
@@ -592,6 +618,7 @@ background-color: rgba(255, 255, 255, 0.1);
 border-radius: 50%;
 justify-content: center;
 align-items: center;
+transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-soc-item + .footer-soc-item {
@@ -626,12 +653,15 @@ letter-spacing: 0.03em;
 color: var(--secondary-text-color);
 background: var(--background-team);
 
+transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .filter-btn:hover, 
 .filter-btn:focus {
 color: var(--white-color);
-background: var(--accent-color);
+background-color: var(--accent-color);
 box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
  0px 1px 2px rgba(0, 0, 0, 0.08),
   0px 2px 2px rgba(0, 0, 0, 0.12);
@@ -689,6 +719,7 @@ color: var(--primary-text-color);
 
 .portfolio-link {
 display: block;
+transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-link:hover,
